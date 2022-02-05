@@ -4,7 +4,6 @@ import os
 import sys
 import requests
 import xmltodict
-from six.moves import queue as Queue
 from threading import Thread
 import re
 import json
@@ -23,7 +22,7 @@ START = 0
 MEDIA_NUM = 50
 
 # Numbers of downloading threads concurrently
-THREADS = 10
+THREADS = 20
 
 # Do you like to dump each post as separate json (otherwise you have to extract from bulk xml files)
 # This option is for convenience for terminal users who would like to query e.g. with ./jq (https://stedolan.github.io/jq/)
