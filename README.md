@@ -1,5 +1,7 @@
 ### Use sites.txt
 
+Main repo "https://github.com/dixudx/tumblr-crawler"
+
 ```
 vogue,gucci
 vogue2, gucci2
