@@ -5,7 +5,7 @@ This is a [Python](https://www.python.org) script that you can easily download a
 ### Use sites.txt
 
 ```
-kret,terk
+kret, terk
 cee, eec
 ```
 
