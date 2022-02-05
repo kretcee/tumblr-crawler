@@ -1,10 +1,8 @@
 ### Use sites.txt
 
-Main repo "https://github.com/dixudx/tumblr-crawler"
-
 ```
-vogue,gucci
-vogue2, gucci2
+kret,terk
+cee, eec
 ```
 ### Use Proxies (Optional)
 
@@ -20,3 +18,4 @@ If you are using Shadowsocks with global mode, your `./proxies.json` can be,
     "https": "socks5://127.0.0.1:1080"
 }
 ```
+> Main repo "https://github.com/dixudx/tumblr-crawler"
