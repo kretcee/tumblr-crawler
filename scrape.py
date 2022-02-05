@@ -25,10 +25,6 @@ MEDIA_NUM = 50
 # Numbers of downloading threads concurrently
 THREADS = 20
 
-# Do you like to dump each post as separate json (otherwise you have to extract from bulk xml files)
-# This option is for convenience for terminal users who would like to query e.g. with ./jq (https://stedolan.github.io/jq/)
-EACH_POST_AS_SEPARATE_JSON = False
-
 
 def video_hd_match():
     hd_pattern = re.compile(r'.*"hdUrl":("([^\s,]*)"|false),')
@@ -211,12 +207,6 @@ class CrawlerScheduler(object):
                 data = xmltodict.parse(xml_cleaned)
                 posts = data["tumblr"]["posts"]["post"]
                 for post in posts:
-                    # by default it is switched to false to generate less files,
-                    # as anyway you can extract this from bulk xml files.
-                    if EACH_POST_AS_SEPARATE_JSON:
-                        post_json_file = "{0}/{0}_post_id_{1}.post.json".format(site, post['@id'])
-                        with open(post_json_file, "w") as text_file:
-                            text_file.write(json.dumps(post))
 
                     try:
                         # if post has photoset, walk into photoset for each photo
@@ -246,7 +236,7 @@ def usage():
 
 
 def illegal_json():
-    print("Illegal JSON format in file 'proxies.json'.\n")
+    print("Illegal JSON format in 'proxies.json'.\n")
 
 
 
