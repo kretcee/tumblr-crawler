@@ -5,6 +5,7 @@ import sys
 import requests
 import xmltodict
 from threading import Thread
+import queue as Queue
 import re
 import json
 
@@ -238,28 +239,15 @@ class CrawlerScheduler(object):
 
 
 def usage():
-    print("1. Please create file sites.txt under this same directory.\n"
-          "2. In sites.txt, you can specify tumblr sites separated by "
-          "comma/space/tab/CR. Accept multiple lines of text\n"
-          "3. Save the file and retry.\n\n"
+    print("Please create file sites.txt under this same directory.\n"
+          "Save the file and retry.\n\n"
           "Sample File Content:\nsite1,site2\n\n"
-          "Or use command line options:\n\n"
           "Sample:\npython tumblr-photo-video-ripper.py site1,site2\n\n\n")
-    print(u"未找到sites.txt文件，请创建.\n"
-          u"请在文件中指定Tumblr站点名，并以 逗号/空格/tab/表格鍵/回车符 分割，支持多行.\n"
-          u"保存文件并重试.\n\n"
-          u"例子: site1,site2\n\n"
-          u"或者直接使用命令行参数指定站点\n"
-          u"例子: python tumblr-photo-video-ripper.py site1,site2")
 
 
 def illegal_json():
-    print("Illegal JSON format in file 'proxies.json'.\n"
-          "Please refer to 'proxies_sample1.json' and 'proxies_sample2.json'.\n"
-          "And go to http://jsonlint.com/ for validation.\n\n\n")
-    print(u"文件proxies.json格式非法.\n"
-          u"请参照示例文件'proxies_sample1.json'和'proxies_sample2.json'.\n"
-          u"然后去 http://jsonlint.com/ 进行验证.")
+    print("Illegal JSON format in file 'proxies.json'.\n")
+
 
 
 def parse_sites(filename):
