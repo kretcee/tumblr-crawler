@@ -1,4 +1,6 @@
-### tumblr-crawler
+tumblr-crawler
+===============
+
 This is a [Python](https://www.python.org) script that you can easily download all the photos and videos from your favorite tumblr blogs.
 
 ### Use sites.txt
